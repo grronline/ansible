@@ -1,0 +1,5 @@
+host: [TESTBOX]
+gather_facts: no
+sudo: no
+tasks:
+ name: 
