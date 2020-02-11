@@ -1,4 +1,4 @@
-- hosts: [TESTBOX]
+- hosts: [TESTBOX_WITHANSVAR]
   become: no
   gather_facts: no
   tasks:
