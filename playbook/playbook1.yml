@@ -1,5 +1,15 @@
-host: [TESTBOX]
-gather_facts: no
-sudo: no
-tasks:
- name: 
+- hosts: [TESTBOX]
+  become: no
+  gather_facts: no
+  tasks:
+  - name: sudo_lvs
+    command: "sudo /sbin/lvs"
+    register: out1
+  - name: sudo_vgs
+    command: "sudo /sbin/vgs"
+    register: out2
+  - name: fs_info
+    command: "df -h"
+    register: out3
+  - debug:
+     msg: listing "{{out1}},{{out2}},{{out3}}"
